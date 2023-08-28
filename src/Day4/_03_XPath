@@ -1,0 +1,83 @@
+XPATH                               //8/17/23  2nd Rec
+Pros
+-> Can locate any elements. If you know Xpath you don't need other locators. It is the most efficient one.
+-> Can locate an element with its visible text
+-> Can locate an element by index
+-> Can locate child or parent of an element
+
+Cons
+-> It works slower than the other locators. So it should be the last option.
+
+
+tagName[attributeName="value"]                css selector
+
+//tagName[@attributeName="value"]              Relative Xpath selector
+
+html/body/form/input               -> Absolute X path. Never use it. Because if developers add a new element between
+                                      your element this locator wouldn't work
+
+
+Interview question: How many Xpaths are there? Answer: 2 Relative and absolute
+Interview question: Which one do you use and why? Answer:Relative. Bec, if developers add a new element, between your
+                                                         elements this locator wouldn't work.
+
+//span[text()="Business"]                                  ->Gives the element that has "Business" as a displayed text.
+
+//option[starts-with@value,"I"m using XYZ for a month")]   ->Gives the element whose value attribute starts with ,
+                                                             I'm using XYZ for a month.     (month is a unique part)
+
+//option[ends-with(@value,"more")]                         ->Gives the element whose value attribute ends with
+                                                             I'm using XYZ for a month.
+
+//option[contains(@value,"month")]                         -> you can use any part of the text
+
+//option[contains(text(),"month")]
+
+//input[@type="radio" and @value="Business"]               -> we used radio as attribute but we have 8 of them, so we
+                                                              add more filter using and keyword, and Business.
+                                                              this input element meet both condition. radio & Business
+
+//input[@type="radio" or @value="Business"]
+
+                                                              with regular attributes we use @ sign
+
+ <div id="username">
+
+         <span>Hello 1</span>
+         <span>Hello 2</span>
+         <span>Hello 3</span>
+         <span>Hello 4</span>
+
+      <div>
+           <img src="image.png"/>
+           <input type="text"/>
+
+  </div>
+
+  </div>
+  <label> Hello /label>
+
+  //div[@id="username"]/span                             -> Gives the first span child of div
+
+  //div[@id="username"]//img                     //      ->Searches the entire family and gives the first img element
+
+  //div[@id="username"]/img                              ->Searches within the children of the div and since we don't
+                                                           have an image child it throws NoSuchException
+
+  //div[@id="username"]//span/following-sibling::span    -> Gives the second span element(first sibling of span element
+
+  //div[@id="username"]//span/following::span            -> Gives all the span elements after the first one
+
+  //img[@src="image.png"]/..                             ->Gives the parent of the img tag, which is div
+
+  //img[@src="image.png"]/parent::div                    ->Gives the same element with above
+
+  //img[@src="image.png"]/../..                          ->Gives the grand parent of the img element
+
+  (//input[@type="radio"])[3]                            ->Gives the third input element that has same type attribute
+
+  (//option[starts-with(@value,"I'm")])[4]
+
+
+
+ ->->-> with css we use > but with Xpath we use /

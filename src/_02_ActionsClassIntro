@@ -1,0 +1,6 @@
+What is action class?
+-it is a class that allows us to control special keys on our keyboard and mouse
+like ctrl,shift,arrows,single click, double click, right click, click and hold, drag and drop elements
+
+How do you use Action class?
+-We create an Actions object and from this object we create  an Action and perform this action.

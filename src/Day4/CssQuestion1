@@ -1,0 +1,65 @@
+package Day4;
+
+import Utilities.BaseDriver;
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class _04_ extends BaseDriver {
+
+    //Question 1 Css
+
+    public static void main(String[] args) {
+
+
+        driver.get("http:demoqa.com/text-box");
+
+        WebElement fullNameArea = driver.findElement(By.id("userName"));
+        fullNameArea.sendKeys("Automation");
+
+        WebElement emailArea = driver.findElement(By.id("userEmail"));
+        emailArea.sendKeys("testing@gmail.com");
+
+        WebElement currentAddressArea = driver.findElement(By.id("currentAddress"));
+        currentAddressArea.sendKeys("TestingCurrentAddress");
+
+        WebElement permanentAddressArea = driver.findElement(By.id("permanentAddress"));
+        permanentAddressArea.sendKeys("TestingPermanentAddress");
+
+        WebElement submitButton = driver.findElement(By.id("submit"));
+        submitButton.click();
+
+        //Verify that full name has "Automation" in it.
+        //Verify that Email has "testing" in it.
+
+        String fullName = fullNameArea.getAttribute("value");
+        if(fullName.contains("Automation")){
+            System.out.println("full Name Test passed");
+
+        }else{
+            System.out.println("full Name Test failed");
+        }
+
+         String email = emailArea. getAttribute("value");
+        if(email.contains("Testing")){
+            System.out.println("email Test passed");
+
+        }else{
+            System.out.println("email Test failed");
+
+        }
+
+        waitAndQuit();
+
+
+
+    }
+
+
+    }
+
+
+
+
+

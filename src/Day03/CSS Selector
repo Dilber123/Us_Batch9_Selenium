@@ -1,0 +1,54 @@
+tagName[attributeName="value"]
+
+We can use all attributes of an element to locate it
+
+input[autocomplete="section-input_3given_name]
+
+
+
+   <div id="username">
+
+         <span>Hello 1</span>
+         <span>Hello 2</span>
+
+      <div>
+           <img src="image.png"/>
+           <input type="text"/>
+
+  </div>
+
+  </div>
+  <label> Hello /label>
+
+  span[data-input-type="first"]>input   -> gives the first input child of the span element9Searches within the immediate children
+                                            if span doesn't have an input child Selenium throws NoSuchElement Exception
+  span[data-input-type="first"]>label              -> gives the first label child of the span element
+
+  span[data-input-type="first"]>input+label        -> gives the first label sibling of the input element
+
+
+
+
+  div[id="username"] input                         ->Searches within the entire family and brings the first input element
+                    ^space means entire family
+
+  div[id="username"]>div>input                     ->gives the same element as above
+
+
+  div[class="button-group"]> :nth-child(3)         ->gives the third child of the div element
+  div[class="button-group"]> :last-child(3)        ->gives the last child of div element
+  div[class="button-group"]> :nth-last-child(3)    ->gives the third child from the end
+
+
+  div[class="button-group"]>*                      ->gives all of the children of div element-not others of the family
+
+  Symbols
+  >                 -> child
+  space             ->children +grandchildren
+  +                 ->siblings
+
+  Starts with - Ends with
+
+button[data-original-title^="Compare"] -> Gives the button element that has data-original-title attribute which starts with Compare
+button[data-original-title$="Product"] -> Gives the button element that has data-original-title attribute which ends with Product
+button[data-original-title*="this"] -> Gives the button element that has data-original-title attribute which starts with this
